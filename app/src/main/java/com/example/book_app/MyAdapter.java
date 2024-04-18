@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private Context context;
-    private ArrayList book_id, book_title, book_author, book_pages;
+    private final Context context;
+    private final ArrayList book_id, book_title, book_author, book_pages;
     MyAdapter ( Context context,
                 ArrayList book_id,
                 ArrayList book_title,

@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
  class MyDatabaseHelper extends SQLiteOpenHelper {
-    private Context context;
+    private final Context context;
     private static final String DATABSE_NAME ="book_library.db";
     private static final int DATABASE_VERSION =1;
     private static final String TABLE_NAME="my_library";

@@ -32,7 +32,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Title 1"
                 android:textSize="40sp"
                 android:textStyle="bold"
                 android:textColor="#0000FF"
