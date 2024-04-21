@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,11 +39,22 @@ public class MainActivity extends AppCompatActivity {
         book_author = new ArrayList<>();
         book_pages = new ArrayList<>();
         store_all_data_inArrays();
-        myAdapter=new MyAdapter(MainActivity.this,book_id, book_title, book_author, book_pages);
+        myAdapter=new MyAdapter(MainActivity.this,this, book_id, book_title, book_author,
+                book_pages);
         recyclerView.setAdapter(myAdapter);//gán vào recyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));//display
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode==1){
+            recreate();
+        }
+    }//generate
+
     void store_all_data_inArrays(){
         Cursor cursor = myDatabaseHelper.read_display_AllData();
         if(cursor.getCount() == 0)
