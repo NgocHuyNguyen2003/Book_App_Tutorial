@@ -13,6 +13,7 @@
         android:theme="@style/Theme.Book_App"
         tools:targetApi="31">
         <activity
+            android:parentActivityName=".MainActivity"
             android:name=".UpdateActivity"
             android:exported="false" />
         <activity
@@ -23,7 +24,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="Book Library">
+            android:label="Book Management">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
