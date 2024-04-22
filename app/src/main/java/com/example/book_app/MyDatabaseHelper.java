@@ -73,10 +73,24 @@ import androidx.annotation.Nullable;
 
          long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
          if(result == -1){
-             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+             Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
          }else {
              Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
          }
 
+     }
+     void Delete_One_Row(String row_id){
+         SQLiteDatabase db = this.getWritableDatabase();
+         long result = db.delete(TABLE_NAME, "_id=?", new String[]{row_id});
+         if(result == -1){
+             Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
+         }else{
+             Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
+         }
+     }
+
+     void deleteAllData(){
+         SQLiteDatabase db = this.getWritableDatabase();
+         db.execSQL("DELETE FROM " + TABLE_NAME);
      }
 }
